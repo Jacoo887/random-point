@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto Random</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scopri un Punto Random del Mondo!</h1>
+  <button onclick="generatePoint()">Genera Punto</button>
+  <p id="result">Clicca il pulsante per scoprire un punto casuale!</p>
+
+  <script>
+    function generatePoint() {
+      let lat = (Math.random() * 180 - 90).toFixed(6);
+      let lng = (Math.random() * 360 - 180).toFixed(6);
+      document.getElementById("result").innerText = `Coordinate: Latitudine ${lat}, Longitudine ${lng}`;
+    }
+  </script>
+</body>
+</html>
